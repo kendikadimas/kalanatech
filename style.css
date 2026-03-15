@@ -1223,6 +1223,8 @@ img { max-width: 100%; display: block; }
 .article-thumb-visual.t1 { background: linear-gradient(135deg, var(--blue-500), var(--blue-700)); }
 .article-thumb-visual.t2 { background: linear-gradient(135deg, var(--blue-600), var(--blue-900)); }
 .article-thumb-visual.t3 { background: linear-gradient(135deg, var(--blue-700), var(--blue-950)); }
+.article-thumb-visual.t4 { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.article-thumb-visual.t5 { background: linear-gradient(135deg, #3b82f6, #1e40af); }
 
 .article-thumb-visual ion-icon {
     font-size: 42px; color: rgba(255,255,255,0.2);
