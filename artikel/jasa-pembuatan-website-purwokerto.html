@@ -40,7 +40,30 @@
         @media (max-width: 768px) { .article-header h1 { font-size: 1.8rem; } .article-content { padding: 25px; } }
     </style>
 </head>
-<body style="background: var(--gray-50);">
+<body style="background: var(--gray-50); padding-top: 80px;">
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../logo.png" alt="Kalana Labs Logo" class="logo-img">
+                Kalana<span>Labs</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#hero" class="nav-link">Home</a></li>
+                <li><a href="../tentang-kami.html" class="nav-link">Tentang</a></li>
+                <li><a href="../index.html#services" class="nav-link">Layanan</a></li>
+                <li><a href="../index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="../index.html#articles" class="nav-link active">Artikel</a></li>
+            </ul>
+            <a href="../index.html#contact" class="nav-cta">Konsultasi Gratis</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
     <div class="container article-page">
         <a href="../index.html" class="back-link">
             <ion-icon name="arrow-back-outline"></ion-icon>
@@ -77,5 +100,12 @@
             </div>
         </article>
     </div>
+    <footer class="footer">
+        <div class="container" style="text-align: center; padding: 40px 0;">
+            <p>&copy; 2026 Kalana Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>
