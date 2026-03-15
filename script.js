@@ -47,9 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinkEls.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') && link.getAttribute('href').includes(currentSection)) {
-                link.classList.add('active');
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            // Only remove active if we found a section on THIS page to avoid clearing hardcoded active links on subpages
+            if (currentSection !== '') {
+                link.classList.remove('active');
+                if (href.includes('#' + currentSection)) {
+                    link.classList.add('active');
+                }
             }
         });
     });
