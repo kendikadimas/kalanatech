@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasa Pembuatan Website Purwokerto & Jasa Buat Website UMKM</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <meta name="description"
         content="Cari Jasa Pembuatan Website Purwokerto? KalanaLabs spesialis jasa buat website UMKM & landing page profesional. Murah, cepat & SEO Friendly di Banyumas.">
     <meta name="keywords" content="jasa website purwokerto, jasa pembuatan website purwokerto, jasa buat website, website UMKM, software developer purwokerto, landing page purwokerto, KalanaLabs">
@@ -84,9 +86,10 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html#hero" class="nav-link active">Home</a></li>
-                <li><a href="tentang-kami.html" class="nav-link">Tentang</a></li>
                 <li><a href="index.html#services" class="nav-link">Layanan</a></li>
+                <li><a href="index.html#pricing" class="nav-link">Harga</a></li>
                 <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="tentang-kami.html" class="nav-link">Tentang</a></li>
                 <li><a href="index.html#articles" class="nav-link">Artikel</a></li>
             </ul>
             <a href="#contact" class="nav-cta">Konsultasi Gratis</a>
@@ -117,8 +120,10 @@
                     <span class="text-highlight">Jasa Pembuatan Website </span> & Solusi Digital UMKM
                 </h1>
                 <p class="hero-subtitle">
-                    Kami membantu UMKM dan bisnis menengah membangun kehadiran digital yang kuat
-                    melalui website profesional, aplikasi modern, dan strategi digital yang tepat sasaran.
+                    Kami bantu bisnis kamu yang pengen memulai go-online melalui website, aplikasi, serta sistem yang mengatasi permasalahan bisnismu.
+                    <!-- Kami membantu UMKM dan bisnis menengah membangun kehadiran digital yang kuat
+                    melalui website profesional, aplikasi modern, dan strategi digital yang tepat sasaran. -->
+
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn-primary btn-lg" id="heroCta">
@@ -132,81 +137,45 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-mockup-stack">
-                    <!-- Main Mockup -->
-                    <div class="mockup-browser main-mockup">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><span></span><span></span><span></span></div>
-                            <div class="browser-url">www.client-business.com</div>
+                <div class="hero-carousel-wrapper">
+                    <div class="hero-carousel" id="heroCarousel">
+                        <!-- Project 1 -->
+                        <div class="carousel-item active">
+                            <img src="dapoerniknik.png" alt="Dapoer Niknik Project" class="carousel-project-img">
+                            <div class="carousel-badge"><ion-icon name="restaurant-outline"></ion-icon> F&B Website</div>
                         </div>
-                        <div class="browser-body">
-                            <div class="mock-hero-section">
-                                <div class="mock-nav">
-                                    <div class="mock-logo"></div>
-                                    <div class="mock-nav-links">
-                                        <div class="mock-link"></div>
-                                        <div class="mock-link"></div>
-                                        <div class="mock-link"></div>
-                                        <div class="mock-btn-sm"></div>
-                                    </div>
-                                </div>
-                                <div class="mock-hero-content">
-                                    <div class="mock-text-lg"></div>
-                                    <div class="mock-text-lg w70"></div>
-                                    <div class="mock-text-sm"></div>
-                                    <div class="mock-cta-row">
-                                        <div class="mock-btn"></div>
-                                        <div class="mock-btn outline"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mock-features">
-                                <div class="mock-feature-card"></div>
-                                <div class="mock-feature-card"></div>
-                                <div class="mock-feature-card"></div>
-                            </div>
+                        <!-- Project 2 -->
+                        <div class="carousel-item">
+                            <img src="rentcar.png" alt="Rent Car Website" class="carousel-project-img">
+                            <div class="carousel-badge"><ion-icon name="car-outline"></ion-icon> Rental Platform</div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="carousel-item">
+                            <img src="Anggana.png" alt="Anggana Project" class="carousel-project-img">
+                            <div class="carousel-badge"><ion-icon name="color-palette-outline"></ion-icon> Creative Agency</div>
                         </div>
                     </div>
-                    <!-- Secondary Mockup -->
-                    <div class="mockup-browser secondary-mockup">
-                        <div class="browser-bar">
-                            <div class="browser-dots"><span></span><span></span><span></span></div>
-                            <div class="browser-url">dashboard.app</div>
-                        </div>
-                        <div class="browser-body dark">
-                            <div class="mock-sidebar">
-                                <div class="mock-sidebar-item active"></div>
-                                <div class="mock-sidebar-item"></div>
-                                <div class="mock-sidebar-item"></div>
-                                <div class="mock-sidebar-item"></div>
-                            </div>
-                            <div class="mock-dashboard">
-                                <div class="mock-stat-row">
-                                    <div class="mock-stat-card s1"></div>
-                                    <div class="mock-stat-card s2"></div>
-                                    <div class="mock-stat-card s3"></div>
-                                </div>
-                                <div class="mock-chart-area"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Floating stats -->
+                    
+                    <button class="carousel-nav-btn prev" id="heroCarouselPrev"><ion-icon name="chevron-back-outline"></ion-icon></button>
+                    <button class="carousel-nav-btn next" id="heroCarouselNext"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+
+                    <!-- Floating stats with new copywriting -->
                     <div class="hero-float-card float-card-1">
                         <div class="float-icon">
-                            <ion-icon name="trending-up"></ion-icon>
+                            <ion-icon name="diamond-outline"></ion-icon>
                         </div>
                         <div class="float-info">
-                            <strong>+125%</strong>
-                            <span>Traffic Increase</span>
+                            <strong>Desain Premium</strong>
+                            <span>Kredibilitas Bisnis Naik</span>
                         </div>
                     </div>
                     <div class="hero-float-card float-card-2">
                         <div class="float-icon green">
-                            <ion-icon name="checkmark-circle"></ion-icon>
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
                         </div>
                         <div class="float-info">
-                            <strong>99.9%</strong>
-                            <span>Uptime Server</span>
+                            <strong>Mobile Friendly</strong>
+                            <span>Nyaman di Semua HP</span>
                         </div>
                     </div>
                 </div>
@@ -340,24 +309,7 @@
                 </div>
                 <div class="why-visual">
                     <div class="why-image-card">
-                        <div class="why-mockup">
-                            <div class="browser-bar small">
-                                <div class="browser-dots"><span></span><span></span><span></span></div>
-                            </div>
-                            <div class="browser-body">
-                                <div class="mock-ecomm">
-                                    <div class="mock-ecomm-header"></div>
-                                    <div class="mock-product-grid">
-                                        <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                        <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                        <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                        <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                        <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                        <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="logo.png" alt="KalanaLabs Logo" class="why-logo-img">
                         <div class="why-accent-box">
                             <ion-icon name="checkmark-circle"></ion-icon>
                             <span>Project Selesai Tepat Waktu</span>
@@ -413,81 +365,19 @@
                     </div>
                 </div>
 
-                <div class="portfolio-card" id="port-1">
-                    <div class="portfolio-mockup">
-                        <div class="browser-bar tiny">
-                            <div class="browser-dots"><span></span><span></span><span></span></div>
-                        </div>
-                        <div class="browser-body">
-                            <div class="mock-site type-a">
-                                <div class="mock-site-nav"><div class="mock-logo"></div><div class="mock-nav-links"><div class="mock-link"></div><div class="mock-link"></div><div class="mock-link"></div></div></div>
-                                <div class="mock-site-hero"><div class="mock-text-lg"></div><div class="mock-text-lg w60"></div><div class="mock-text-sm w80"></div><div class="mock-btn"></div></div>
-                                <div class="mock-site-cards"><div class="mock-card-item"></div><div class="mock-card-item"></div><div class="mock-card-item"></div></div>
-                            </div>
-                        </div>
+                <!-- Anggana Project -->
+                <div class="portfolio-card large" id="port-anggana">
+                    <div class="portfolio-img-container">
+                        <img src="Anggana.png" alt="Anggana Project Company Profile" class="portfolio-real-img">
                     </div>
                     <div class="portfolio-info">
                         <span class="portfolio-type">Company Profile</span>
-                        <h3>PT Maju Bersama — Corporate Website</h3>
-                        <p>Website company profile lengkap dengan halaman profil perusahaan, layanan, galeri, dan blog berita.</p>
+                        <h3>Anggana Project — Creative Digital Agency</h3>
+                        <p>Website company profile modern dan estetik untuk agensi digital kreatif di Purwokerto dengan tampilan portofolio interaktif.</p>
                         <div class="portfolio-tags">
-                            <span>Website</span>
-                            <span>SEO</span>
-                            <span>Responsive</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card" id="port-2">
-                    <div class="portfolio-mockup">
-                        <div class="browser-bar tiny">
-                            <div class="browser-dots"><span></span><span></span><span></span></div>
-                        </div>
-                        <div class="browser-body dark">
-                            <div class="mock-dashboard-mini">
-                                <div class="mock-dash-sidebar"><div class="mock-sidebar-item active"></div><div class="mock-sidebar-item"></div><div class="mock-sidebar-item"></div></div>
-                                <div class="mock-dash-main">
-                                    <div class="mock-stat-row"><div class="mock-stat-card s1"></div><div class="mock-stat-card s2"></div></div>
-                                    <div class="mock-chart-area"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-type">Web Application</span>
-                        <h3>Inventory Management System</h3>
-                        <p>Sistem manajemen inventori dengan dashboard real-time dan laporan otomatis.</p>
-                        <div class="portfolio-tags">
-                            <span>Dashboard</span>
-                            <span>CRUD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card wide" id="port-4">
-                    <div class="portfolio-mockup">
-                        <div class="browser-bar tiny">
-                            <div class="browser-dots"><span></span><span></span><span></span></div>
-                        </div>
-                        <div class="browser-body">
-                            <div class="mock-ecomm-page">
-                                <div class="mock-site-nav"><div class="mock-logo"></div><div class="mock-search-bar"></div><div class="mock-nav-links"><div class="mock-link"></div><div class="mock-link"></div><div class="mock-btn-sm"></div></div></div>
-                                <div class="mock-product-wide">
-                                    <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                    <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                    <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                    <div class="mock-product"><div class="mock-product-img"></div><div class="mock-product-info"></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-type">E-Commerce</span>
-                        <h3>Toko Online Fashion</h3>
-                        <p>Platform toko online lengkap dengan keranjang belanja dan pembayaran otomatis.</p>
-                        <div class="portfolio-tags">
-                            <span>E-Commerce</span>
-                            <span>Payment</span>
+                            <span>Creative Agency</span>
+                            <span>Design List</span>
+                            <span>UI/UX</span>
                         </div>
                     </div>
                 </div>
@@ -543,7 +433,7 @@
                         <div class="price-card">
                             <div class="price-header">
                                 <span class="price-tier">Basic</span>
-                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">600K</span></div>
+                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">650K</span></div>
                                 <p>Landing page sederhana untuk promosi produk atau event.</p>
                             </div>
                             <ul class="price-features">
@@ -561,7 +451,7 @@
                             <div class="badge-popular">Best Seller</div>
                             <div class="price-header">
                                 <span class="price-tier">Business</span>
-                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">1.2JT</span></div>
+                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">1.3JT</span></div>
                                 <p>Pilihan tepat untuk UMKM yang ingin tampil profesional.</p>
                             </div>
                             <ul class="price-features">
@@ -578,7 +468,7 @@
                         <div class="price-card">
                             <div class="price-header">
                                 <span class="price-tier">Premium</span>
-                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">2JT</span></div>
+                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">2.5JT</span></div>
                                 <p>Untuk bisnis yang mengutamakan branding premium & performa.</p>
                             </div>
                             <ul class="price-features">
@@ -588,7 +478,7 @@
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> SEO Advanced</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Copywriting Assistance</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Priority Support</li>
-                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Revisi Unlimited</li>
+                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Revisi 6x</li>
                             </ul>
                             <a href="https://wa.me/6285707736885?text=Halo%20Kalana%20Labs%2C%20saya%20minat%20paket%20Landing%20Page%20Premium%2C%20ingin%20konsultasi%20terlebih%20dahulu." target="_blank" class="btn-outline price-btn">Pilih Paket</a>
                         </div>
@@ -640,13 +530,13 @@
                                 <p>Solusi premium untuk perusahaan besar dengan kebutuhan khusus.</p>
                             </div>
                             <ul class="price-features">
-                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Unlimited Halaman</li>
+                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Up to 20 Halaman</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Custom CMS & Admin</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Multi-Language</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Career Portal</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Advanced Security</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Priority Support 6 Bln</li>
-                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Revisi Unlimited</li>
+                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Revisi 6x</li>
                             </ul>
                             <a href="https://wa.me/6285707736885?text=Halo%20Kalana%20Labs%2C%20saya%20minat%20paket%20Company%20Profile%20Enterprise%2C%20ingin%20konsultasi%20terlebih%20dahulu." target="_blank" class="btn-outline price-btn">Konsultasi Dulu</a>
                         </div>
@@ -682,7 +572,7 @@
                             </div>
                             <ul class="price-features">
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Semua Fitur Standard</li>
-                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Multi-Role & Permission</li>
+                                <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Multi-Role & Permission (Admin, Manajer, Staf)</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> REST API Integration</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Notification System</li>
                                 <li class="included"><ion-icon name="checkmark-circle"></ion-icon> Advanced Reporting</li>
@@ -718,7 +608,7 @@
                             <div class="badge-popular">Rekomendasi</div>
                             <div class="price-header">
                                 <span class="price-tier">Full Commerce</span>
-                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">7JT+</span></div>
+                                <div class="price-amount"><span class="currency">Rp</span><span class="amount">8.5JT+</span></div>
                                 <p>Platform e-commerce lengkap dengan pembayaran otomatis dan tracking.</p>
                             </div>
                             <ul class="price-features">
@@ -1071,6 +961,7 @@
                         <li><a href="tentang-kami.html">Tentang Kami</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="index.html#services">Layanan</a></li>
+                        <li><a href="terms.html">Syarat & Ketentuan</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

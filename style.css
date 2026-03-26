@@ -456,8 +456,109 @@ img { max-width: 100%; display: block; }
     animation: fadeInUp 1s var(--ease) 0.3s both;
 }
 
-.hero-mockup-stack {
+.hero-carousel-wrapper {
     position: relative;
+    width: 100%;
+}
+
+.hero-carousel {
+    display: grid;
+    grid-template-areas: "carousel";
+    width: 100%;
+    position: relative;
+}
+
+/* Ensure mobile layout adjustment for carousel */
+@media (max-width: 768px) {
+    .carousel-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    .carousel-nav-btn.prev {
+        left: 10px;
+    }
+    .carousel-nav-btn.next {
+        right: 10px;
+    }
+}
+
+.carousel-item {
+    grid-area: carousel;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    transform: scale(0.95);
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.carousel-project-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    display: block;
+}
+
+.carousel-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.95);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--blue-800);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--blue-600);
+    border: none;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s var(--ease);
+}
+
+.carousel-nav-btn:hover {
+    background: var(--blue-600);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev {
+    left: -22px;
+}
+
+.carousel-nav-btn.next {
+    right: -22px;
 }
 
 .mockup-browser {
@@ -465,18 +566,14 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     background: var(--white);
+    width: 100%; height: 100%;
 }
 
-.main-mockup {
-    position: relative; z-index: 2;
+.standalone-mockup {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
 }
-
-.secondary-mockup {
-    position: absolute;
-    bottom: -30px; right: -30px;
-    width: 55%; z-index: 3;
-    border: 3px solid rgba(255,255,255,0.15);
-}
+.standalone-mockup .browser-body { flex: 1; }
 
 .browser-bar {
     display: flex; align-items: center; gap: 12px;
@@ -640,8 +737,8 @@ img { max-width: 100%; display: block; }
     border: 1px solid var(--gray-100);
 }
 
-.float-card-1 { top: 10%; right: -10px; animation: float 6s ease-in-out infinite; }
-.float-card-2 { bottom: 10%; left: -10px; animation: float 7s ease-in-out infinite 1s; }
+.float-card-1 { top: -20px; right: -25px; animation: float 6s ease-in-out infinite; }
+.float-card-2 { bottom: -20px; left: -25px; animation: float 7s ease-in-out infinite 1s; }
 
 .float-icon {
     width: 36px; height: 36px; border-radius: 10px;
@@ -822,37 +919,18 @@ img { max-width: 100%; display: block; }
 
 .why-image-card { position: relative; }
 
-.why-mockup {
+.why-logo-img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
     border-radius: var(--radius-lg);
-    overflow: hidden;
     box-shadow: var(--shadow-lg);
     background: var(--white);
+    padding: 48px;
     border: 1px solid var(--gray-200);
-}
-
-.mock-ecomm { padding: 4px; }
-.mock-ecomm-header {
-    height: 16px; border-radius: 4px;
-    background: var(--gray-100); margin-bottom: 10px;
-}
-
-.mock-product-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
-}
-
-.mock-product {
-    border-radius: 6px;
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-}
-
-.mock-product-img {
-    height: 60px;
-    background: linear-gradient(135deg, var(--blue-50), var(--gray-100));
-}
-
-.mock-product-info {
-    padding: 6px; height: 24px;
+    display: block;
+    margin: 0 auto;
 }
 
 .why-accent-box {

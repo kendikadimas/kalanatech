@@ -205,4 +205,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ═══════════════════════════════════
+    // HERO CAROUSEL
+    // ═══════════════════════════════════
+    const heroCarouselNext = document.getElementById('heroCarouselNext');
+    const heroCarouselPrev = document.getElementById('heroCarouselPrev');
+    const heroCarouselItems = document.querySelectorAll('#heroCarousel .carousel-item');
+    
+    if (heroCarouselNext && heroCarouselPrev && heroCarouselItems.length > 0) {
+        let currentCarouselIndex = 0;
+        let carouselInterval;
+
+        const showCarouselItem = (index) => {
+            heroCarouselItems.forEach(item => item.classList.remove('active'));
+            heroCarouselItems[index].classList.add('active');
+        };
+
+        const nextCarouselItem = () => {
+            currentCarouselIndex = (currentCarouselIndex + 1) % heroCarouselItems.length;
+            showCarouselItem(currentCarouselIndex);
+        };
+
+        const prevCarouselItem = () => {
+            currentCarouselIndex = (currentCarouselIndex - 1 + heroCarouselItems.length) % heroCarouselItems.length;
+            showCarouselItem(currentCarouselIndex);
+        };
+
+        const startCarouselInterval = () => {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextCarouselItem, 5000);
+        };
+
+        heroCarouselNext.addEventListener('click', () => {
+            nextCarouselItem();
+            startCarouselInterval();
+        });
+
+        heroCarouselPrev.addEventListener('click', () => {
+            prevCarouselItem();
+            startCarouselInterval();
+        });
+
+        // Initialize autoplay
+        startCarouselInterval();
+    }
+
 });
