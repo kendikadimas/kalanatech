@@ -4,8 +4,17 @@ import { Link } from 'react-router-dom';
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
   return (
-    <header className="wed-header wed-reveal">
+    <header className="wed-header">
       <nav className="wed-container wed-nav">
         <div className="wed-nav-links hide-mobile">
           <a href="#services">SERVICES</a>
@@ -24,10 +33,25 @@ function Header() {
 
         {/* Mobile Toggle */}
         <div className="wed-nav-toggle md-hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <span style={{ transform: isMenuOpen ? 'rotate(45deg) translateY(11px)' : 'none' }}></span>
-          <span style={{ opacity: isMenuOpen ? 0 : 1 }}></span>
-          <span style={{ transform: isMenuOpen ? 'rotate(-45deg) translateY(-11px)' : 'none' }}></span>
+          <span style={{ 
+            transform: isMenuOpen ? 'rotate(45deg) translateY(11px)' : 'none',
+            background: isMenuOpen ? '#fff' : 'inherit' 
+          }}></span>
+          <span style={{ 
+            opacity: isMenuOpen ? 0 : 1,
+            background: isMenuOpen ? '#fff' : 'inherit' 
+          }}></span>
+          <span style={{ 
+            transform: isMenuOpen ? 'rotate(-45deg) translateY(-11px)' : 'none',
+            background: isMenuOpen ? '#fff' : 'inherit' 
+          }}></span>
         </div>
+
+        {/* Mobile Overlay */}
+        <div 
+          className={`wed-mobile-overlay ${isMenuOpen ? 'active' : ''}`} 
+          onClick={() => setIsMenuOpen(false)}
+        ></div>
 
         {/* Mobile Drawer */}
         <div className={`wed-mobile-drawer ${isMenuOpen ? 'active' : ''}`}>
@@ -59,7 +83,7 @@ function Hero() {
             Valencia Wedding Organizer berdedikasi untuk merancang perayaan yang mencerminkan kisah unik Anda dengan keanggunan dan detail yang sempurna.
           </p>
           <div style={{marginTop: '40px'}}>
-             <a href="#contact" className="wed-btn-book" style={{padding: '16px 48px'}}>
+             <a href="#contact" className="wed-btn-book hero-cta-btn">
               MULAI PERENCANAAN
             </a>
           </div>
