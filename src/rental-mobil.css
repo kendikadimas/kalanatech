@@ -107,27 +107,40 @@
 .rent-hero-wrap {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: 40px; /* Vertical gap for mobile */
+    align-items: flex-start;
     position: relative;
     z-index: 10;
+}
+
+@media (min-width: 1024px) {
+    .rent-hero-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 }
 
 .rent-hero-wrap h1 {
     font-size: clamp(2.5rem, 8vw, 5.5rem);
     font-weight: 800;
-    line-height: 0.9;
+    line-height: 0.95;
     letter-spacing: -3px;
     color: #ffffff;
-    max-width: 700px;
+    max-width: 800px;
+    margin: 0;
+}
+
+.rent-hero-details {
+    max-width: 450px;
 }
 
 .rent-hero-wrap p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #f1f5f9;
-    max-width: 320px;
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 /* STATS SECTION (Between Hero and Benefit) */
@@ -170,9 +183,8 @@
 .rent-card-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1px;
-    background: #f1f5f9;
-    border: 1px solid #f1f5f9;
+    gap: 30px; /* Increased gap */
+    padding: 20px 0;
 }
 
 @media (min-width: 768px) { .rent-card-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -187,22 +199,24 @@
     justify-content: space-between;
     min-height: 440px;
     position: relative;
+    border: 1px solid #f1f5f9;
 }
 
-.rent-v-card:hover { background: #f8faff; z-index: 5; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+.rent-v-card:hover { transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.06); border-color: #3b82f6; }
 
 .rent-v-type { font-size: 0.6rem; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
 .rent-v-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; letter-spacing: -0.5px; }
 
 .rent-v-img-wrap {
-    height: 150px;
-    margin-bottom: 30px;
+    height: 200px;
+    margin-bottom: 20px;
     display: flex; align-items: center; justify-content: center;
     transition: transform 0.5s;
+    overflow: hidden;
 }
 
-.rent-v-card:hover .rent-v-img-wrap { transform: scale(1.05); }
-.rent-v-img { width: 100%; height: auto; object-fit: contain; }
+.rent-v-card:hover .rent-v-img-wrap { transform: scale(1.08); }
+.rent-v-img { width: 100%; height: 100%; object-fit: contain; }
 
 .rent-v-specs {
     display: flex;
@@ -223,17 +237,44 @@
 .rent-v-price { font-size: 1.1rem; font-weight: 800; color: #0f172a; }
 .rent-v-price span { font-size: 0.75rem; font-weight: 500; color: #94a3b8; }
 
-.rent-btn-book {
-    border: 1.5px solid #0f172a;
-    background: transparent;
-    padding: 10px 24px;
-    border-radius: 100px;
-    font-size: 0.75rem;
+.rent-btn-view-all {
+    background: #3b82f6;
+    color: #fff !important;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.8rem;
     font-weight: 800;
+    border: none;
     transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.rent-v-card:hover .rent-btn-book { background: #0f172a; color: #fff; }
+.rent-btn-view-all:hover { background: #2563eb; transform: translateY(-2px); }
+
+.rent-btn-book {
+    border: 1.5px solid #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.rent-btn-book:hover { background: rgba(255, 255, 255, 1); color: #0f172a !important; }
+
+.rent-v-card .rent-btn-book {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #475569 !important;
+    padding: 10px 24px;
+}
+
+.rent-v-card:hover .rent-btn-book { background: #3b82f6; border-color: #3b82f6; color: #fff !important; }
 
 /* SERVICE TABS (Updated Inactive Style) */
 .rent-service-tabs { background: #ffffff; }
