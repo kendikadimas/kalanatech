@@ -144,7 +144,7 @@ const RentalMobil = () => {
       contentDesc: "Unit dijamin <br /> kinclong & gres",
       percent: "PROMO",
       img: "/tesla_model_x_promo_1774914623521.png",
-      btnText: "Cek Tanggal",
+      // btnText: "Cek Tanggal",
     },
     {
       id: 1,
@@ -155,7 +155,7 @@ const RentalMobil = () => {
       contentDesc: "Driver hafal <br /> medan & rute",
       percent: "VIP",
       img: "/luxury_vip_service_rent_1774914651825.png",
-      btnText: "Pesan Driver",
+      // btnText: "Pesan Driver",
     },
     {
       id: 2,
@@ -166,7 +166,7 @@ const RentalMobil = () => {
       contentDesc: "Gratis biaya <br /> operasional kota",
       percent: "FREE",
       img: "/car_parked_office_rent_1774913624337.png",
-      btnText: "Req Alamat",
+      // btnText: "Req Alamat",
     },
     {
       id: 3,
@@ -177,7 +177,7 @@ const RentalMobil = () => {
       contentDesc: "Harga fix <br /> di depan",
       percent: "100%",
       img: "/luxury_car_interior_rent_1774913603949.png",
-      btnText: "Cek Harga",
+      // btnText: "Cek Harga",
     },
   ];
 
