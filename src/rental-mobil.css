@@ -1,0 +1,354 @@
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RENTAL MOBIL — PURWOKERTO TRANS
+   Approach: High-Fidelity, Tiny Typography, Responsive, Full-Width
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap');
+
+.rent-root {
+    background-color: #ffffff;
+    color: #0f172a;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.rent-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 1024px) {
+    .rent-container { padding: 0 60px; }
+}
+
+.rent-section { padding: 80px 0; }
+.rent-section-gray { background-color: #f8fafc; }
+.rent-section-dark { background-color: #020617; color: #ffffff; }
+
+/* NAVBAR (Pill) */
+.rent-navbar {
+    position: fixed;
+    top: 40px; left: 0; right: 0;
+    z-index: 2000;
+    padding: 0 20px;
+}
+
+.rent-nav-pill {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 100px;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.rent-navbar.scrolled { top: 20px; }
+.rent-navbar.scrolled .rent-nav-pill {
+    max-width: 1000px;
+    padding: 8px 30px;
+    background: #ffffff;
+}
+
+.rent-nav-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -1.5px;
+}
+
+.rent-nav-logo span { color: #3b82f6; }
+
+.rent-nav-links {
+    display: none;
+    align-items: center;
+    gap: 32px;
+}
+
+@media (min-width: 1024px) { .rent-nav-links { display: flex; } }
+
+.rent-nav-links a {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rent-nav-links a:hover { color: #0f172a; }
+
+/* HERO */
+.rent-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    background: url('/hero.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 120px;
+}
+
+.rent-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.4) 0%, transparent 40%);
+}
+
+.rent-hero-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 10;
+}
+
+.rent-hero-wrap h1 {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    color: #ffffff;
+    max-width: 700px;
+}
+
+.rent-hero-wrap p {
+    font-size: 0.8rem;
+    color: #f1f5f9;
+    max-width: 320px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* STATS SECTION (Between Hero and Benefit) */
+.rent-stats-section {
+    padding: 0;
+    margin-top: -60px;
+    position: relative;
+    z-index: 100;
+}
+
+.rent-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: #f1f5f9;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 1024px) { .rent-stats-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.rent-stat-card {
+    background: #ffffff;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.rent-stat-card h3 { font-size: 3rem; font-weight: 800; color: #0f172a; line-height: 1; margin-bottom: 8px; }
+.rent-stat-card p { font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
+
+/* UNIT CARDS (4 Grid) */
+.rent-grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.rent-grid-header h2 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; }
+
+.rent-card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1px;
+    background: #f1f5f9;
+    border: 1px solid #f1f5f9;
+}
+
+@media (min-width: 768px) { .rent-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1280px) { .rent-card-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.rent-v-card {
+    background: #ffffff;
+    padding: 30px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 440px;
+    position: relative;
+}
+
+.rent-v-card:hover { background: #f8faff; z-index: 5; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+
+.rent-v-type { font-size: 0.6rem; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.rent-v-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; letter-spacing: -0.5px; }
+
+.rent-v-img-wrap {
+    height: 150px;
+    margin-bottom: 30px;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.5s;
+}
+
+.rent-v-card:hover .rent-v-img-wrap { transform: scale(1.05); }
+.rent-v-img { width: 100%; height: auto; object-fit: contain; }
+
+.rent-v-specs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.rent-v-spec-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 700; color: #94a3b8; }
+
+.rent-v-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rent-v-price { font-size: 1.1rem; font-weight: 800; color: #0f172a; }
+.rent-v-price span { font-size: 0.75rem; font-weight: 500; color: #94a3b8; }
+
+.rent-btn-book {
+    border: 1.5px solid #0f172a;
+    background: transparent;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.rent-v-card:hover .rent-btn-book { background: #0f172a; color: #fff; }
+
+/* SERVICE TABS (Updated Inactive Style) */
+.rent-service-tabs { background: #ffffff; }
+
+.rent-tabs-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    background: #f1f5f9;
+    gap: 1px;
+}
+
+.rent-tab-trigger {
+    padding: 32px;
+    cursor: pointer;
+    background: #ffffff;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    transition: 0.3s;
+    border: none;
+}
+
+.rent-tab-trigger.active { background: #020617; }
+.rent-tab-trigger h5 { font-size: 0.8rem; font-weight: 700; color: #020617; line-height: 1.2; }
+.rent-tab-trigger.active h5 { color: #ffffff; }
+
+.rent-tab-trigger p { font-size: 0.65rem; color: #64748b; }
+.rent-tab-trigger.active p { color: #94a3b8; }
+
+.rent-tab-content { background: #000; padding: 100px 0; overflow: hidden; }
+
+.rent-tab-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .rent-tab-grid { flex-direction: row; justify-content: space-between; }
+}
+
+.rent-tab-heading h2 { 
+    font-size: clamp(2.5rem, 7vw, 5rem); 
+    font-weight: 800; 
+    line-height: 0.95; 
+    margin-bottom: 40px; 
+    letter-spacing: -4px; 
+    color: #fff;
+}
+
+.rent-discount-box {
+    background: #3b82f6;
+    padding: 30px;
+    min-width: 180px;
+    text-align: center;
+}
+
+.rent-discount-box h3 { font-size: 3rem; font-weight: 800; color: #fff; }
+.rent-discount-box p { font-size: 0.85rem; color: #fff; margin-top: 8px; font-weight: 600; line-height: 1.1; }
+
+.rent-tab-img { width: 100%; max-width: 700px; height: auto; object-fit: contain; }
+
+/* GALLERY */
+.rent-gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+@media (min-width: 768px) { .rent-gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .rent-gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+.rent-gallery-item { height: 300px; position: relative; overflow: hidden; background: #020617; }
+@media (min-width: 1024px) { .rent-gallery-item { height: 400px; } }
+.rent-gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s; opacity: 0.8; }
+.rent-gallery-item:hover .rent-gallery-img { transform: scale(1.1); opacity: 1; }
+.rent-gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 30px; opacity: 0; transition: 0.4s; }
+.rent-gallery-item:hover .rent-gallery-overlay { opacity: 1; }
+.rent-gallery-overlay span { font-size: 0.75rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+
+/* CTA SECTION */
+.rent-cta-section { padding: 120px 0; background: #0f172a; color: #fff; text-align: center; }
+.rent-cta-wrap h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -2px; color: white; }
+.rent-cta-wrap p { font-size: 1rem; color: #94a3b8; max-width: 600px; margin: 0 auto 48px; }
+.rent-btn-cta { background: #22c55e; color: #fff; padding: 16px 48px; border-radius: 100px; font-weight: 800; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; }
+.rent-btn-cta:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3); }
+
+/* ARTICLES */
+.rent-article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
+.rent-art-img-wrap { height: 240px; background: #f1f5f9; overflow: hidden; margin-bottom: 20px; }
+.rent-art-img { width: 100%; height: 100%; object-fit: cover; }
+.rent-art-meta { font-size: 0.7rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.rent-art-title { font-size: 1.15rem; font-weight: 800; color: #0f172a; line-height: 1.35; }
+
+/* FAQ SECTION */
+.rent-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) { .rent-faq-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; } }
+
+.rent-faq-item {
+    background: #ffffff;
+    padding: 32px;
+    border: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rent-faq-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: #3b82f6; }
+.rent-faq-item h5 { font-size: 0.9rem; font-weight: 800; color: #020617; margin-bottom: 12px; }
+.rent-faq-item p { font-size: 0.75rem; color: #64748b; line-height: 1.5; }
+
+/* FOOTER */
+.rent-footer { background: #020617; padding: 100px 0 40px; }
+.rent-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 60px; }
+.rent-footer-brand p { font-size: 0.8rem; color: #64748b; margin-top: 20px; }
+.rent-footer-col h5 { font-size: 0.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.rent-footer-col a, .rent-footer-col p { display: block; font-size: 0.75rem; color: #94a3b8; margin-bottom: 10px; }

@@ -9,6 +9,7 @@ import ManfaatWebsiteUmkmPurwokerto from './pages/artikel/ManfaatWebsiteUmkmPurw
 import TipsSeoWebsiteBisnis from './pages/artikel/TipsSeoWebsiteBisnis';
 import WebsiteProfesionalKepercayaanPelanggan from './pages/artikel/WebsiteProfesionalKepercayaanPelanggan';
 import Wedding from './Wedding';
+import RentalMobil from './pages/RentalMobil';
 
 // We create a wrapper to call the hook inside BrowserRouter context
 function MainApp() {
@@ -36,6 +37,7 @@ function MainApp() {
       <Route path="/artikel/website-profesional-kepercayaan-pelanggan.html" element={<WebsiteProfesionalKepercayaanPelanggan />} />
       <Route path="/artikel/website-profesional-kepercayaan-pelanggan" element={<WebsiteProfesionalKepercayaanPelanggan />} />
       <Route path="/wedding" element={<Wedding />} />
+      <Route path="/rental-mobil" element={<RentalMobil />} />
     </Routes>
 
     {/* Floating WhatsApp Button */}

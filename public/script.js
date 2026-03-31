@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ═══════════════════════════════════
     const navbar = document.getElementById('navbar');
     const onScroll = () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        if(navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
     };
     window.addEventListener('scroll', onScroll);
     onScroll();
@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
 
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
