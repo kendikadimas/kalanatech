@@ -213,58 +213,70 @@
 
 .rent-card-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 12px; /* Smaller gap for mobile */
 }
 
-@media (min-width: 640px) { .rent-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .rent-card-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
 @media (min-width: 1024px) { .rent-card-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } }
 @media (min-width: 1280px) { .rent-card-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .rent-v-card {
     background: var(--white);
-    padding: 24px;
+    padding: 15px; /* Reduced for mobile */
     transition: 0.4s;
     border: 1px solid #f1f5f9;
     display: flex;
     flex-direction: column;
-    min-height: 440px;
+    min-height: 320px; /* Shorter for mobile */
 }
 
-@media (min-width: 1024px) { .rent-v-card { padding: 32px; } }
+@media (min-width: 1024px) { .rent-v-card { padding: 32px; min-height: 440px; } }
 .rent-v-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 
-.rent-v-type { font-size: 0.6rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
-.rent-v-card h3 { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 20px; letter-spacing: -0.5px; }
+.rent-v-type { font-size: 0.5rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+@media (min-width: 1024px) { .rent-v-type { font-size: 0.6rem; letter-spacing: 1.5px; margin-bottom: 8px; } }
+
+.rent-v-card h3 { font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 12px; letter-spacing: -0.5px; }
+@media (min-width: 1024px) { .rent-v-card h3 { font-size: 1.25rem; margin-bottom: 20px; } }
 
 .rent-v-img-wrap {
-    height: 180px;
-    margin-bottom: 24px;
+    height: 100px;
+    margin-bottom: 15px;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
 }
+
+@media (min-width: 1024px) { .rent-v-img-wrap { height: 180px; margin-bottom: 24px; } }
 
 .rent-v-img { width: 100%; height: 100%; object-fit: contain; transition: 0.5s; }
 .rent-v-card:hover .rent-v-img { transform: scale(1.08); }
 
 .rent-v-specs {
     display: flex;
-    gap: 15px;
-    margin-bottom: 24px;
-    padding-top: 20px;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding-top: 12px;
     border-top: 1px solid #f1f5f9;
 }
 
-.rent-v-spec-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 700; color: #94a3b8; }
+@media (min-width: 1024px) { .rent-v-specs { gap: 15px; margin-bottom: 24px; padding-top: 20px; } }
+
+.rent-v-spec-item { display: flex; align-items: center; gap: 4px; font-size: 0.6rem; font-weight: 700; color: #94a3b8; }
+@media (min-width: 1024px) { .rent-v-spec-item { gap: 6px; font-size: 0.7rem; } }
 
 .rent-v-footer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
     margin-top: auto;
 }
 
-.rent-v-price { font-size: 1.1rem; font-weight: 800; color: #0f172a; }
+@media (min-width: 640px) { .rent-v-footer { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+.rent-v-price { font-size: 0.95rem; font-weight: 800; color: #0f172a; }
+@media (min-width: 1024px) { .rent-v-price { font-size: 1.1rem; } }
 .rent-v-price span { font-size: 0.7rem; font-weight: 500; color: #94a3b8; }
 
 /* BUTTONS */
