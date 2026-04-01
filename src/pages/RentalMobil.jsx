@@ -32,8 +32,8 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import "../rental-mobil.css";
 
 /**
- * PURWOKERTO TRANS - Rental Mobil Landing Page
- * LOCALIZED (Purwokerto & Indonesian Market)
+ * KALANA TRANS - Rental Mobil Landing Page
+ * GENERALIZED (Wider Market)
  * HIGH-FIDELITY / PILL-NAV / RECENTLY UPDATED: 8 UNITS / GALLERY / CTA
  */
 
@@ -48,12 +48,29 @@ const RentalMobil = () => {
       setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Animation Observer
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll(".reveal, .reveal-scale, .stagger-reveal");
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleBooking = (namaMobil) => {
     const text = encodeURIComponent(
-      `Halo Purwokerto Trans, saya mau tanya ketersediaan unit *${namaMobil}* untuk perjalanan di Purwokerto...`
+      `Halo TransHub, saya mau tanya ketersediaan unit *${namaMobil}* untuk perjalanan saya...`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
@@ -199,12 +216,12 @@ const RentalMobil = () => {
       img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Rute Wisata 1 Hari di Baturraden & Sekitarnya",
+      title: "Rute Wisata Populer & Hidden Gems di Kota Anda",
       category: "Perjalanan",
       img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800",
     },
     {
-      title: "Kuliner Malam Purwokerto yang Wajib Dicoba",
+      title: "Rekomendasi Kuliner Nusantara yang Wajib Dicoba",
       category: "Kuliner",
       img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800",
     },
@@ -217,7 +234,7 @@ const RentalMobil = () => {
       <nav id="navbar" className={`rent-navbar ${isScrolled ? "scrolled" : ""}`}>
         <div className="rent-nav-pill">
           <div className="rent-nav-logo">
-            TRANS<span>WOKERTO</span>
+            TRANS<span>HUB</span>
           </div>
 
           <div className="rent-nav-links">
@@ -246,7 +263,7 @@ const RentalMobil = () => {
             <h1 dangerouslySetInnerHTML={{ __html: "Rental Mobil<br / > Terpercaya." }} />
             <div className="rent-hero-details">
               <p>
-                Mau liburan di Baturraden atau ada urusan bisnis di Purwokerto? Serahkan urusan transportasinya ke kami. Unit dijamin gres, wangi, dan nggak pake ribet!
+                Mau liburan bersama keluarga atau ada urusan bisnis mendesak? Serahkan urusan transportasi Anda kepada kami. Unit dijamin gres, wangi, dan pelayanan tanpa ribet!
               </p>
               <div style={{ display: 'flex', gap: '15px' }}>
                 <button onClick={() => window.location.href = '#unit'} className="rent-btn-view-all">Booking Sekarang</button>
@@ -258,7 +275,7 @@ const RentalMobil = () => {
       </header>
 
       {/* STATS SECTION (NEW) */}
-      <section className="rent-stats-section">
+      <section className="rent-stats-section reveal-scale stagger-reveal">
         <div className="rent-container">
           <div className="rent-stats-grid">
             <div className="rent-stat-card">
@@ -282,14 +299,14 @@ const RentalMobil = () => {
       </section>
 
       {/* ORDER PROCESS SECTION */}
-      <section id="proses" className="rent-section" style={{background: '#fff'}}>
+      <section id="proses" className="rent-section reveal" style={{background: '#fff'}}>
         <div className="rent-container">
-           <div className="rent-grid-header" style={{textAlign: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+           <div className="rent-grid-header" style={{textAlign: 'center', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
               <h2 style={{marginBottom: '20px'}}>Alur Pemesanan</h2>
-              <p style={{fontSize: '0.9rem', color: '#64748b', maxWidth: '600px', margin: '0 auto'}}>Proses sewa mobil di Purwokerto Trans praktis dan transparan.</p>
+              <p style={{fontSize: '0.9rem', color: '#64748b', maxWidth: '600px', margin: '0 auto'}}>Proses sewa mobil di TransHub sangat praktis dan transparan.</p>
            </div>
            
-           <div className="rent-process-grid" style={{marginTop: '60px'}}>
+           <div className="rent-process-grid stagger-reveal" style={{marginTop: '60px'}}>
               <div className="rent-step-card">
                  <div className="rent-step-number">1</div>
                  <h4>Pilih Unit</h4>
@@ -308,14 +325,14 @@ const RentalMobil = () => {
               <div className="rent-step-card">
                  <div className="rent-step-number">4</div>
                  <h4>Siap Jalan</h4>
-                 <p>Mobil diantar ke lokasi Anda (Stasiun, Rumah, atau Kantor) sesuai waktu yang ditentukan.</p>
+                 <p>Mobil diantar langsung ke lokasi Anda (Bandara, Rumah, atau Kantor) sesuai waktu yang ditentukan.</p>
               </div>
            </div>
         </div>
       </section>
 
       {/* SERVICE TABS SECTION */}
-      <section id="layanan" className="rent-service-tabs">
+      <section id="layanan" className="rent-service-tabs reveal">
         <div className="rent-tabs-nav">
           {serviceTabs.map((tab, i) => (
             <div
@@ -332,7 +349,7 @@ const RentalMobil = () => {
           ))}
         </div>
 
-        <div className="rent-tab-content">
+        <div className="rent-tab-content reveal">
           <div className="rent-container">
             <div className="rent-tab-grid">
               <div className="rent-tab-heading">
@@ -357,14 +374,14 @@ const RentalMobil = () => {
       </section>
 
       {/* TREND VEHICLES (LOCAL UNITS) - 8 UNITS */}
-      <section id="unit" className="rent-section rent-section-gray">
+      <section id="unit" className="rent-section rent-section-gray reveal">
         <div className="rent-container">
           <div className="rent-grid-header">
             <h2>Pilihan Unit</h2>
             {/* <button className="rent-btn-view-all" style={{ background: '#0f172a' }}>Lihat Semua &rarr;</button> */}
           </div>
 
-          <div className="rent-card-grid">
+          <div className="rent-card-grid stagger-reveal">
             {trendVehicles.map((v, i) => (
               <div key={i} className={`rent-v-card ${v.active ? 'active' : ''}`}>
                 <div>
@@ -389,7 +406,7 @@ const RentalMobil = () => {
       </section>
 
       {/* GALLERY SECTION (NEW) */}
-      <section id="gallery" className="rent-section" style={{ padding: '0' }}>
+      <section id="gallery" className="rent-section reveal stagger-reveal" style={{ padding: '0' }}>
         <div className="rent-gallery-grid">
           {galleryImages.map((img, i) => (
             <div key={i} className="rent-gallery-item">
@@ -403,11 +420,11 @@ const RentalMobil = () => {
       </section>
 
       {/* CTA SECTION (NEW) */}
-      <section className="rent-cta-section">
+      <section className="rent-cta-section reveal">
         <div className="rent-container">
           <div className="rent-cta-wrap">
             <h2>Butuh Perjalanan Aman <br /> & Terpercaya?</h2>
-            <p>Konsultasikan kebutuhan transportasimu kepada tim profesional kami. Kami siap melayani 24/7 untuk memastikan kenyamananmu di Purwokerto.</p>
+            <p>Konsultasikan kebutuhan transportasimu kepada tim profesional kami. Kami siap melayani 24/7 untuk memastikan kenyamanan perjalanan Anda.</p>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} className="rent-btn-cta">
               <MessageCircle size={20} />
               Hubungi Admin via WhatsApp
@@ -417,7 +434,7 @@ const RentalMobil = () => {
       </section>
 
       {/* ARTICLES / BLOG */}
-      <section id="artikel" className="rent-section rent-section-gray">
+      <section id="artikel" className="rent-section rent-section-gray reveal">
         <div className="rent-container">
           <div className="rent-grid-header" style={{ marginBottom: '80px' }}>
             <h2>Artikel & Tips</h2>
@@ -426,7 +443,7 @@ const RentalMobil = () => {
             </button> */}
           </div>
 
-          <div className="rent-article-grid">
+          <div className="rent-article-grid stagger-reveal">
             {articles.map((art, i) => (
               <div key={i} className="rent-article-card cursor-pointer">
                 <div className="rent-art-img-wrap">
@@ -444,14 +461,14 @@ const RentalMobil = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className="rent-section" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <section id="faq" className="rent-section reveal" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="rent-container">
-          <center className="rent-grid-header" style={{ textAlign: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+          <div className="rent-grid-header" style={{ textAlign: 'center', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <h2 style={{ marginBottom: '24px' }}>Sering Ditanyakan</h2>
-            <p style={{ fontSize: '0.9rem', color: '#64748b', maxWidth: '600px' }}>Masih punya pertanyaan seputar sewa mobil di Purwokerto Trans? Cek daftar tanya jawab di bawah ini.</p>
-          </center>
+            <p style={{ fontSize: '0.9rem', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>Masih punya pertanyaan seputar sewa mobil di TransHub? Cek daftar tanya jawab di bawah ini.</p>
+          </div>
 
-          <div className="rent-faq-grid">
+          <div className="rent-faq-grid stagger-reveal">
             <div className="rent-faq-item">
               <h5>Apa syarat sewa lepas kunci?</h5>
               <p>Persyaratannya cukup mudah, hanya memerlukan KTP/KK asli, SIM A aktif, dan bukti kepemilikan media sosial atau ID card tempat bekerja untuk proses verifikasi.</p>
@@ -461,8 +478,8 @@ const RentalMobil = () => {
               <p>Harga yang tertera adalah unit standar. Anda bisa memilih paket "All-In" yang sudah mencakup Driver, BBM, dan Tol untuk kenyamanan maksimal perjalanan Anda.</p>
             </div>
             <div className="rent-faq-item">
-              <h5>Bisakah antar-jemput ke Stasiun Purwokerto?</h5>
-              <p>Tentu bisa. Kami melayani penjemputan gratis di area Stasiun Purwokerto dan alamat-alamat strategis lainnya di dalam kota selama 24 jam.</p>
+              <h5>Bisakah antar-jemput ke Bandara atau Stasiun?</h5>
+              <p>Tentu bisa. Kami melayani penjemputan di Bandara, Stasiun, dan alamat-alamat strategis lainnya di dalam kota selama 24 jam.</p>
             </div>
             <div className="rent-faq-item">
               <h5>Bagaimana cara pembayarannya?</h5>
@@ -478,9 +495,9 @@ const RentalMobil = () => {
           <div className="rent-footer-grid">
             <div className="rent-footer-brand">
               <div className="rent-nav-logo" style={{ color: '#fff' }}>
-                TRANS<span>WOKERTO</span>
+                TRANS<span>HUB</span>
               </div>
-              <p>Solusi transportasi terbaik di Purwokerto. Dari kebutuhan bisnis hingga liburan keluarga, kami siap memberikan layanan kelas wahid.</p>
+              <p>Solusi transportasi terbaik untuk kebutuhan Anda. Dari urusan bisnis hingga liburan keluarga, kami siap memberikan layanan kelas wahid.</p>
               <div style={{ display: 'flex', gap: '16px', marginTop: '32px' }}>
                 <a href="#" style={{ color: '#94a3b8' }}><FaInstagram size={20} /></a>
                 <a href="#" style={{ color: '#94a3b8' }}><FaFacebook size={20} /></a>
@@ -497,14 +514,14 @@ const RentalMobil = () => {
 
             <div className="rent-footer-col">
               <h5>Kontak & Info</h5>
-              <p>Jl. HR Boenyamin Purwokerto</p>
+              <p>Jl. Utama Hub Strategis No. 8</p>
               <a href="#">WA: +62 857 0773 6885</a>
-              <a href="#">admin@purwokertotrans.com</a>
+              <a href="#">admin@transhub.com</a>
             </div>
           </div>
 
           <div style={{ marginTop: '80px', paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-            <p style={{ fontSize: '0.75rem', color: '#64748b' }}>&copy; 2026 Purwokerto Trans. Semua hak cipta dilindungi.</p>
+            <p style={{ fontSize: '0.75rem', color: '#64748b' }}>&copy; 2026 TransHub. Semua hak cipta dilindungi.</p>
             <div style={{ display: 'flex', gap: '40px', fontSize: '0.7rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>
               <a href="#">Privasi</a>
               <a href="#">Ketentuan</a>
