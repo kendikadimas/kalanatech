@@ -281,6 +281,39 @@ const RentalMobil = () => {
         </div>
       </section>
 
+      {/* ORDER PROCESS SECTION */}
+      <section id="proses" className="rent-section" style={{background: '#fff'}}>
+        <div className="rent-container">
+           <div className="rent-grid-header" style={{textAlign: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+              <h2 style={{marginBottom: '20px'}}>Alur Pemesanan</h2>
+              <p style={{fontSize: '0.9rem', color: '#64748b', maxWidth: '600px', margin: '0 auto'}}>Proses sewa mobil di Purwokerto Trans praktis dan transparan.</p>
+           </div>
+           
+           <div className="rent-process-grid" style={{marginTop: '60px'}}>
+              <div className="rent-step-card">
+                 <div className="rent-step-number">1</div>
+                 <h4>Pilih Unit</h4>
+                 <p>Telusuri koleksi armada kami dan pilih yang sesuai dengan kapasitas serta budget Anda.</p>
+              </div>
+              <div className="rent-step-card">
+                 <div className="rent-step-number">2</div>
+                 <h4>Kirim Data</h4>
+                 <p>Klik tombol WhatsApp dan kirimkan data penyewa untuk verifikasi cepat oleh admin kami.</p>
+              </div>
+              <div className="rent-step-card">
+                 <div className="rent-step-number">3</div>
+                 <h4>Konfirmasi</h4>
+                 <p>Dapatkan konfirmasi ketersediaan unit dan lakukan pembayaran DP/Pelunasan sesuai instruksi.</p>
+              </div>
+              <div className="rent-step-card">
+                 <div className="rent-step-number">4</div>
+                 <h4>Siap Jalan</h4>
+                 <p>Mobil diantar ke lokasi Anda (Stasiun, Rumah, atau Kantor) sesuai waktu yang ditentukan.</p>
+              </div>
+           </div>
+        </div>
+      </section>
+
       {/* SERVICE TABS SECTION */}
       <section id="layanan" className="rent-service-tabs">
         <div className="rent-tabs-nav">
