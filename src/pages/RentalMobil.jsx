@@ -328,7 +328,7 @@ const RentalMobil = () => {
         <div className="rent-container">
           <div className="rent-grid-header">
             <h2>Pilihan Unit</h2>
-            <button className="rent-btn-view-all" style={{ background: '#0f172a' }}>Lihat Semua &rarr;</button>
+            {/* <button className="rent-btn-view-all" style={{ background: '#0f172a' }}>Lihat Semua &rarr;</button> */}
           </div>
 
           <div className="rent-card-grid">
@@ -388,9 +388,9 @@ const RentalMobil = () => {
         <div className="rent-container">
           <div className="rent-grid-header" style={{ marginBottom: '80px' }}>
             <h2>Artikel & Tips</h2>
-            <button className="rent-btn-view-all" style={{ background: 'transparent', border: '1.5px solid #0f172a', color: '#0f172a' }}>
+            {/* <button className="rent-btn-view-all" style={{ background: 'transparent', border: '1.5px solid #0f172a', color: '#0f172a' }}>
               Semua Postingan &rarr;
-            </button>
+            </button> */}
           </div>
 
           <div className="rent-article-grid">
@@ -413,10 +413,10 @@ const RentalMobil = () => {
       {/* FAQ SECTION */}
       <section id="faq" className="rent-section" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="rent-container">
-          <div className="rent-grid-header" style={{ textAlign: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+          <center className="rent-grid-header" style={{ textAlign: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <h2 style={{ marginBottom: '24px' }}>Sering Ditanyakan</h2>
             <p style={{ fontSize: '0.9rem', color: '#64748b', maxWidth: '600px' }}>Masih punya pertanyaan seputar sewa mobil di Purwokerto Trans? Cek daftar tanya jawab di bawah ini.</p>
-          </div>
+          </center>
 
           <div className="rent-faq-grid">
             <div className="rent-faq-item">
