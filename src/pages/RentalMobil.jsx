@@ -39,6 +39,51 @@ import "../rental-mobil.css";
 
 const WHATSAPP_NUMBER = "6285707736885";
 
+// Shared Counter Component for Stats
+const AnimatedCounter = ({ end, suffix = "", decimals = 0 }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const countRef = React.useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          let start = 0;
+          const duration = 2500; // Slower counter
+          const totalFrames = duration / 16;
+          const increment = end / totalFrames;
+          
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              setCount(end);
+              clearInterval(timer);
+            } else {
+              setCount(start);
+            }
+          }, 16);
+        }
+      },
+      { threshold: 0.1 } // Start sooner
+    );
+
+    if (countRef.current) observer.observe(countRef.current);
+    return () => observer.disconnect();
+  }, [end, hasAnimated]);
+
+  return (
+    <span ref={countRef}>
+      {count.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}
+      {suffix}
+    </span>
+  );
+};
+
 const RentalMobil = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
@@ -275,23 +320,23 @@ const RentalMobil = () => {
       </header>
 
       {/* STATS SECTION (NEW) */}
-      <section className="rent-stats-section reveal-scale stagger-reveal">
+      <section className="rent-stats-section reveal-scale">
         <div className="rent-container">
           <div className="rent-stats-grid">
             <div className="rent-stat-card">
-              <h3>10+</h3>
+              <h3><AnimatedCounter end={10} suffix="+" /></h3>
               <p>Yrs Experience</p>
             </div>
             <div className="rent-stat-card">
-              <h3>50+</h3>
+              <h3><AnimatedCounter end={50} suffix="+" /></h3>
               <p>Active Fleet</p>
             </div>
             <div className="rent-stat-card">
-              <h3>2.5k</h3>
+              <h3><AnimatedCounter end={2.5} suffix="k" decimals={1} /></h3>
               <p>Happy Clients</p>
             </div>
             <div className="rent-stat-card">
-              <h3>4.9</h3>
+              <h3><AnimatedCounter end={4.9} decimals={1} /></h3>
               <p>Avg Rating</p>
             </div>
           </div>
@@ -349,7 +394,7 @@ const RentalMobil = () => {
           ))}
         </div>
 
-        <div className="rent-tab-content reveal">
+        <div key={activeTab} className="rent-tab-content animate-tab-switch">
           <div className="rent-container">
             <div className="rent-tab-grid">
               <div className="rent-tab-heading">
@@ -433,14 +478,11 @@ const RentalMobil = () => {
         </div>
       </section>
 
-      {/* ARTICLES / BLOG */}
+      {/* ARTICLES / BLOG (COMMEMTED OUT)
       <section id="artikel" className="rent-section rent-section-gray reveal">
         <div className="rent-container">
           <div className="rent-grid-header" style={{ marginBottom: '80px' }}>
             <h2>Artikel & Tips</h2>
-            {/* <button className="rent-btn-view-all" style={{ background: 'transparent', border: '1.5px solid #0f172a', color: '#0f172a' }}>
-              Semua Postingan &rarr;
-            </button> */}
           </div>
 
           <div className="rent-article-grid stagger-reveal">
@@ -459,6 +501,7 @@ const RentalMobil = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* FAQ SECTION */}
       <section id="faq" className="rent-section reveal" style={{ maxWidth: '1200px', margin: '0 auto' }}>

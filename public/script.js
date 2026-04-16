@@ -20,13 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
         });
     }
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
+            if (navLinks) navLinks.classList.remove('active');
+            document.body.classList.remove('nav-open');
         });
     });
 
@@ -52,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = link.getAttribute('href');
             if (!href) return;
 
-            // Only remove active if we found a section on THIS page to avoid clearing hardcoded active links on subpages
             if (currentSection !== '') {
                 link.classList.remove('active');
                 if (href.includes('#' + currentSection)) {
@@ -63,39 +64,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ═══════════════════════════════════
-    // PRICING TABS
+    // FAQ ACCORDION
     // ═══════════════════════════════════
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetId = btn.getAttribute('data-tab');
-
-            // Deactivate all
-            tabButtons.forEach(b => b.classList.remove('active'));
-            tabPanels.forEach(p => p.classList.remove('active'));
-
-            // Activate target
-            btn.classList.add('active');
-            const targetPanel = document.getElementById(targetId);
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-            }
-        });
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
+
+    // ═══════════════════════════════════
+    // PRICING CAROUSEL NAV
+    // ═══════════════════════════════════
+    const pricingCarousel = document.getElementById('pricingCarousel');
+    const pricingPrev = document.getElementById('pricingPrev');
+    const pricingNext = document.getElementById('pricingNext');
+
+    if (pricingCarousel && pricingPrev && pricingNext) {
+        pricingNext.addEventListener('click', () => {
+            const cardWidth = pricingCarousel.querySelector('.price-card').offsetWidth + 16;
+            pricingCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+
+        pricingPrev.addEventListener('click', () => {
+            const cardWidth = pricingCarousel.querySelector('.price-card').offsetWidth + 16;
+            pricingCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+    }
 
     // ═══════════════════════════════════
     // SCROLL REVEAL ANIMATIONS
     // ═══════════════════════════════════
     const revealSelectors = [
         '.section-header', '.section-tag', '.section-title', '.section-subtitle',
-        '.service-card', '.why-feature', '.why-visual',
+        '.service-card', '.about-stat-item', '.about-content',
         '.portfolio-card', '.price-card', '.article-card',
-        '.cta-content', '.hero-visual',
-        '.stats-bar', '.pricing-tabs',
-        '.articles-top', '.why-content .section-desc',
-        '.why-content .section-title'
+        '.cta-content', '.faq-item'
     ];
 
     document.querySelectorAll(revealSelectors.join(', ')).forEach(el => {
@@ -116,33 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     // ═══════════════════════════════════
-    // STAGGERED DELAYS FOR GRIDS
-    // ═══════════════════════════════════
-    const staggerContainers = [
-        '.services-grid',
-        '.portfolio-grid',
-        '.pricing-grid',
-        '.articles-grid',
-        '.stats-grid',
-        '.why-features'
-    ];
-
-    staggerContainers.forEach(selector => {
-        const container = document.querySelector(selector);
-        if (container) {
-            Array.from(container.children).forEach((child, i) => {
-                child.style.transitionDelay = `${i * 0.1}s`;
-            });
-        }
-    });
-
-    // ═══════════════════════════════════
     // COUNTER ANIMATION
     // ═══════════════════════════════════
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    const statNumbers = document.querySelectorAll('.stat-number');
 
     const animateCounter = (el) => {
         const target = parseInt(el.getAttribute('data-count'));
+        if (isNaN(target)) return;
         const duration = 2000;
         const step = target / (duration / 16);
         let current = 0;
@@ -174,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href === '#') return;
+            if (href === '#' || !href.startsWith('#')) return;
 
             e.preventDefault();
             const target = document.querySelector(href);
@@ -185,71 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // ═══════════════════════════════════
-    // FAQ ACCORDION
-    // ═══════════════════════════════════
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        if (question) {
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Close all
-                faqItems.forEach(i => i.classList.remove('active'));
-                
-                // Toggle current
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        }
-    });
-
-    // ═══════════════════════════════════
-    // HERO CAROUSEL
-    // ═══════════════════════════════════
-    const heroCarouselNext = document.getElementById('heroCarouselNext');
-    const heroCarouselPrev = document.getElementById('heroCarouselPrev');
-    const heroCarouselItems = document.querySelectorAll('#heroCarousel .carousel-item');
-    
-    if (heroCarouselNext && heroCarouselPrev && heroCarouselItems.length > 0) {
-        let currentCarouselIndex = 0;
-        let carouselInterval;
-
-        const showCarouselItem = (index) => {
-            heroCarouselItems.forEach(item => item.classList.remove('active'));
-            heroCarouselItems[index].classList.add('active');
-        };
-
-        const nextCarouselItem = () => {
-            currentCarouselIndex = (currentCarouselIndex + 1) % heroCarouselItems.length;
-            showCarouselItem(currentCarouselIndex);
-        };
-
-        const prevCarouselItem = () => {
-            currentCarouselIndex = (currentCarouselIndex - 1 + heroCarouselItems.length) % heroCarouselItems.length;
-            showCarouselItem(currentCarouselIndex);
-        };
-
-        const startCarouselInterval = () => {
-            clearInterval(carouselInterval);
-            carouselInterval = setInterval(nextCarouselItem, 5000);
-        };
-
-        heroCarouselNext.addEventListener('click', () => {
-            nextCarouselItem();
-            startCarouselInterval();
-        });
-
-        heroCarouselPrev.addEventListener('click', () => {
-            prevCarouselItem();
-            startCarouselInterval();
-        });
-
-        // Initialize autoplay
-        startCarouselInterval();
-    }
-
 });
