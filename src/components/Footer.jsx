@@ -12,7 +12,7 @@ const Footer = () => {
                             <div className="relative h-8 w-8">
                                 <Image 
                                     src="/logo.png" 
-                                    alt="KalanaLabs" 
+                                    alt="Logo" 
                                     fill
                                     className="object-contain"
                                 />
