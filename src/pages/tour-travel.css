@@ -2,7 +2,7 @@
 
 /* Base Styles */
 .tour-page-root {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     color: #111;
     background-color: #fcfcfc;
     overflow-x: hidden;

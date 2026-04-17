@@ -11,6 +11,7 @@ import WebsiteProfesionalKepercayaanPelanggan from './pages/artikel/WebsiteProfe
 import Wedding from './Wedding';
 import RentalMobil from './pages/RentalMobil';
 import TourTravel from './pages/TourTravel';
+import ScrollToTop from './components/ScrollToTop';
 
 // We create a wrapper to call the hook inside BrowserRouter context
 function MainApp() {
@@ -18,6 +19,7 @@ function MainApp() {
 
   return (
     <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/index.html" element={<Navigate to="/" replace />} />

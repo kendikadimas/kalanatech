@@ -113,8 +113,7 @@ export default function useSiteLogic() {
         };
 
         faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            if (question) question.onclick = () => handleFaqClick(item);
+            if (item) item.onclick = () => handleFaqClick(item);
         });
 
         // --- Hero Carousel ---
