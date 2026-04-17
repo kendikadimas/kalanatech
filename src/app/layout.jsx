@@ -47,9 +47,9 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "KalanaLabs",
-              "image": "https://www.kalanalabs.my.id/logo.png",
-              "@id": "https://www.kalanalabs.my.id",
-              "url": "https://www.kalanalabs.my.id",
+              "image": "https://kalanalabs.my.id/logo.png",
+              "@id": "https://kalanalabs.my.id",
+              "url": "https://kalanalabs.my.id",
               "telephone": "+6285707736885",
               "address": {
                 "@type": "PostalAddress",
