@@ -18,11 +18,11 @@ const inter = Inter({
 
 
 export const metadata = {
-  title: 'KalanaLabs | Jasa Pembuatan Website Purwokerto & Digital Agency',
+  title: 'KalanaLabs - Jasa Pembuatan Website Purwokerto & Digital Agency',
   description: 'Jasa pembuatan website Purwokerto profesional, murah, dan modern. Upgrade bisnis Anda dengan website responsif, SEO-friendly, dan performa tinggi di Banyumas.',
   keywords: 'jasa pembuatan website purwokerto, buat website purwokerto, digital agency purwokerto, web developer purwokerto, pembuatan website banyumas',
   openGraph: {
-    title: 'KalanaLabs | Jasa Pembuatan Website Purwokerto',
+    title: 'KalanaLabs - Jasa Pembuatan Website Purwokerto',
     description: 'Jasa pembuatan website profesional dan modern di Purwokerto.',
     url: 'https://kalanalabs.my.id',
     siteName: 'KalanaLabs',
