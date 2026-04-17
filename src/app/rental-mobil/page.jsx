@@ -32,6 +32,8 @@ import {
   BookOpen,
   ArrowUpRight
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const WHATSAPP_NUMBER = "6285707736885";
 
