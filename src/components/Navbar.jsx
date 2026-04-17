@@ -32,7 +32,7 @@ const Navbar = () => {
                     <div className="relative h-8 w-8">
                         <Image 
                             src="/logo.png" 
-                            alt="KalanaLabs Logo" 
+                            alt="KalanaLabs" 
                             fill
                             className={`object-contain transition-all duration-400 ${scrolled ? 'brightness-100' : 'brightness-0 invert'}`}
                         />
