@@ -53,8 +53,8 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lg md:text-xl leading-relaxed text-white/85 max-w-[680px] mb-10">
-                        KalanaLabs menghadirkan standar kualitas global untuk pelaku bisnis <br />
-                        di Purwokerto & sekitarnya, membangun identitas digital yang modern dan berdaya saing.
+                        KalanaLabs menghadirkan standar kualitas global untuk ekspansi bisnis Anda.<br />
+                        Kami bangun website eksklusif di Purwokerto dengan identitas digital masa depan yang modern dan berdaya saing.
                     </p>
                     <div className="flex gap-4 justify-center">
                         <a href="#services" className="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 text-white rounded-full font-sans font-semibold text-[0.95rem] shadow-[0_8px_30px_rgba(37,99,235,0.25)] hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-300">

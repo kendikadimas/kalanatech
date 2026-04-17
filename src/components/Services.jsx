@@ -100,7 +100,7 @@ const Services = () => {
                                  service.icon === 'globe-outline' ? <Globe size={28} /> :
                                  service.icon === 'search-outline' ? <Search size={28} /> : <Database size={28} />}
                             </div>
-                            <h3 className="text-[1.15rem] font-bold text-gray-900 mb-3">{service.title}</h3>
+                            <div className="text-[1.15rem] font-bold text-gray-900 mb-3">{service.title}</div>
                             <ul className="flex flex-col gap-3">
                                 {service.points.map((point, i) => (
                                     <li key={i} className="text-[0.88rem] text-gray-600 flex items-start gap-2.5 leading-relaxed">

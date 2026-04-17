@@ -12,7 +12,7 @@ const FAQItem = ({ question, answer }) => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 cursor-pointer"
             >
-                <h3 className={`text-[1.05rem] font-bold transition-colors ${isOpen ? 'text-white' : 'text-gray-900'}`}>{question}</h3>
+                <p className={`text-[1.05rem] font-bold transition-colors ${isOpen ? 'text-white' : 'text-gray-900'}`}>{question}</p>
                 <div className={`text-xl transition-transform duration-300 ${isOpen ? 'text-white rotate-45' : 'text-blue-600'}`}>
                     {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                 </div>

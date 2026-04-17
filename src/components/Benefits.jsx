@@ -67,7 +67,7 @@ const Benefits = () => {
                                     <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4">
                                         {reason.icon}
                                     </div>
-                                    <h3 className="text-[1.05rem] font-bold text-gray-900 mb-2">{reason.title}</h3>
+                                    <div className="text-[1.05rem] font-bold text-gray-900 mb-2">{reason.title}</div>
                                     <p className="text-[0.85rem] text-gray-500 leading-relaxed">
                                         {reason.desc}
                                     </p>

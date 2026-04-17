@@ -77,7 +77,7 @@ const Process = () => {
                                 <div className={`w-20 h-20 rounded-2xl ${step.color} text-white flex items-center justify-center mb-6 shadow-xl shadow-blue-500/10 group-hover:scale-110 transition-transform duration-500 border-4 border-white`}>
                                     {step.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                                <p className="text-xl font-bold text-gray-900 mb-3">{step.title}</p>
                                 <p className="text-gray-500 text-[0.92rem] leading-relaxed">
                                     {step.desc}
                                 </p>

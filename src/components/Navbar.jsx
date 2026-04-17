@@ -58,7 +58,7 @@ const Navbar = () => {
                     href="https://wa.me/6285707736885" 
                     className={`hidden sm:inline-flex font-sans text-[0.88rem] font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-md transform hover:-translate-y-px ${scrolled ? 'bg-blue-600 text-white shadow-blue hover:bg-blue-700' : 'bg-white text-blue-700 hover:bg-blue-50'}`}
                 >
-                    Konsultasi Gratis
+                    Diskusi Proyek
                 </a>
                 
                 <button className="md:hidden flex flex-col gap-1.5 p-1.5 bg-transparent border-none cursor-pointer" aria-label="Toggle menu">

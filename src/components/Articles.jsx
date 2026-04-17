@@ -25,9 +25,9 @@ const ArticleCard = ({ id, category, date, title, desc, link }) => (
         </div>
 
         <div className="flex flex-col flex-1">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-snug">
+            <p className="text-xl md:text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-snug">
                 {title}
-            </h3>
+            </p>
             
             <p className="text-gray-500 text-[0.95rem] leading-relaxed mb-8 flex-1">
                 {desc}

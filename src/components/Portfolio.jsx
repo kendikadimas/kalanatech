@@ -31,7 +31,7 @@ const PortfolioCard = ({ id, img, type, title, desc, tags }) => (
         </div>
         <div className="text-left">
             <span className="text-[0.8rem] font-bold text-blue-400 uppercase tracking-wider mb-2 block">{type}</span>
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">{title}</h3>
+            <p className="text-xl font-display font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">{title}</p>
             <p className="text-white/60 text-[0.92rem] leading-relaxed mb-6">{desc}</p>
             <div className="flex flex-wrap gap-2">
                 {tags.map(tag => (
