@@ -7,6 +7,7 @@ import Portfolio from '@/components/Portfolio';
 import About from '@/components/About';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
+import Testimonials from '@/components/Testimonials';
 import Articles from '@/components/Articles';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -23,6 +24,7 @@ export default function Home() {
       <Portfolio />
       <About />
       <Pricing />
+      <Testimonials />
       <FAQ />
       <Articles />
       <CTA />
